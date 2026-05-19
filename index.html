@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Massage Zen - Bien-Être Authentique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; color: #333; }
+    h1, h2, h5 { font-family: 'Lora', serif; color: #12916f; }
+    .navbar { background-color: #12916f; }
+    a.nav-link { color: #fff; }
+    .hero {
+      background: url('images/hero.webp') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .btn-success { background-color: #6c9a8b; border: none; }
+    .btn-success:hover { background-color: #5b8579; }
+    .card img { height: 220px; object-fit: cover; }
+    footer { background: #2c2c2c; color: #fff; }
+    .lang-flag { width: 18px; height: 12px; display:inline-block; margin-right:8px; vertical-align:middle; }
+    .whatsapp-icon { margin-right:8px; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Massage Zen</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a id="nav-home" class="nav-link" href="#hero">Accueil</a></li>
+        <li class="nav-item"><a id="nav-services" class="nav-link" href="#prestations">Prestations</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="#about">À propos</a></li>
+        <li class="nav-item"><a id="nav-rdv" class="nav-link" href="#rdv">Rendez-vous</a></li>
+        <li class="nav-item"><a id="nav-contact" class="nav-link" href="#contact">Contact</a></li>
+
+        <!-- Language selector -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Langue
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+            <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')"><span class="lang-flag"></span>Français</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')"><span class="lang-flag"></span>English</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setLanguage('it')"><span class="lang-flag"></span>Italiano</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header id="hero" class="hero">
+  <div class="hero-content">
+    <h1 class="display-5" id="hero-text">Offrez-vous un moment de bien-être authentique</h1>
+    <a href="#" class="btn btn-success btn-lg mt-3" id="hero-btn"><span class="whatsapp-icon">📱</span><span id="hero-btn-text">Prendre rendez-vous</span></a>
+  </div>
+</header>
+
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Image -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="images/massage-relaxant.png" class="img-fluid rounded shadow-sm" alt="Ambiance massage zen" id="about-img">
+      </div>
+      <!-- Texte -->
+      <div class="col-md-6">
+        <h2 class="mb-4" id="about-title">À propos de Massage Zen</h2>
+        <p id="about-text">
+          Chez <strong>Massage Zen</strong>, nous croyons que le bien-être est une expérience authentique qui se vit dans un cadre harmonieux et apaisant.
+        </p>
+        <a href="#prestations" class="btn btn-success mt-3" id="about-btn">Découvrir nos prestations</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prestations & Tarifs -->
+<section id="prestations" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4" id="prestations-title">Nos Prestations & Tarifs</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="images/massage-relaxant.png" class="card-img-top" alt="Massage relaxant">
+          <div class="card-body">
+            <h5 class="card-title" id="service1-title">Massage Relaxant</h5>
+            <p class="card-text" id="service1-desc">60 min — 40 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="images/massage-therapeutique.jpg" class="card-img-top" alt="Massage thérapeutique">
+          <div class="card-body">
+            <h5 class="card-title" id="service2-title">Massage Thérapeutique</h5>
+            <p class="card-text" id="service2-desc">75 min — 55 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="images/pierres-chaudes.jpg" class="card-img-top" alt="Massage pierres chaudes">
+          <div class="card-body">
+            <h5 class="card-title" id="service3-title">Massage Pierres</h5>
+            <p class="card-text" id="service3-desc">90 min — 70 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="images/massage-duo.jpg" class="card-img-top" alt="Massage duo">
+          <div class="card-body">
+            <h5 class="card-title" id="service4-title">Massage Duo</h5>
+            <p class="card-text" id="service4-desc">60 min — 80 €</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Formulaire Rendez-vous -->
+<section id="rdv" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4" id="rdv-title">Prendre rendez-vous</h2>
+    <form class="row g-3" id="rdv-form">
+      <div class="col-md-6">
+        <label class="form-label" for="name" id="label-name">Nom</label>
+        <input type="text" id="name" class="form-control" required placeholder="" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="email" id="label-email">Email</label>
+        <input type="email" id="email" class="form-control" required placeholder="" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="phone" id="label-phone">Téléphone</label>
+        <input type="tel" id="phone" class="form-control" required placeholder="" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="date" id="label-date">Date</label>
+        <input type="date" id="date" class="form-control" required />
+      </div>
+      <div class="col-12">
+        <label class="form-label" for="message" id="label-message">Message</label>
+        <textarea id="message" class="form-control" rows="3" placeholder=""></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success px-4" id="btn-submit"><span class="whatsapp-icon">📱</span><span id="btn-submit-text">Réserver</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4" id="contact-title">Contact</h2>
+    <p id="contact-email">Email : massagezen2212@gmail.com</p>
+    <p id="contact-whatsapp">Whatsapp : 07 56 91 33 16</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-3">
+  <p id="footer-text">&copy; 2026 Massage Zen - Tous droits réservés</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Multilingual + WhatsApp integration -->
+<script>
+  // === TRANSLATIONS ===
+  const translations = {
+    fr: {
+      nav: { home: "Accueil", services: "Prestations", about: "À propos", rdv: "Rendez-vous", contact: "Contact" },
+      hero: "Offrez-vous un moment de bien-être authentique",
+      heroBtn: "Prendre rendez-vous",
+      aboutTitle: "À propos de Massage Zen",
+      aboutText: "Chez Massage Zen, nous croyons que le bien-être est une expérience authentique qui se vit dans un cadre harmonieux et apaisant.",
+      aboutBtn: "Découvrir nos prestations",
+      prestationsTitle: "Nos Prestations & Tarifs",
+      services: [
+        { title: "Massage Relaxant", desc: "60 min — 40 €" },
+        { title: "Massage Thérapeutique", desc: "75 min — 55 €" },
+        { title: "Massage Pierres", desc: "90 min — 70 €" },
+        { title: "Massage Duo", desc: "60 min — 80 €" }
+      ],
+      rdvTitle: "Prendre rendez-vous",
+      form: { name: "Nom", email: "Email", phone: "Téléphone", date: "Date", message: "Message", submit: "Réserver" },
+      galleryTitle: "Galerie",
+      contactTitle: "Contact",
+      contactEmail: "Email : massagezen2212@gmail.com",
+      contactWhatsapp: "Whatsapp : 07 56 91 33 16",
+      footer: "© 2026 Massage Zen - Tous droits réservés"
+    },
+    en: {
+      nav: { home: "Home", services: "Services", about: "About", rdv: "Appointments", contact: "Contact" },
+      hero: "Treat yourself to an authentic wellness moment",
+      heroBtn: "Book an appointment",
+      aboutTitle: "About Massage Zen",
+      aboutText: "At Massage Zen, we believe wellness is an authentic experience lived in a harmonious and soothing environment.",
+      aboutBtn: "Discover our services",
+      prestationsTitle: "Our Services & Prices",
+      services: [
+        { title: "Relaxing Massage", desc: "60 min — €40" },
+        { title: "Therapeutic Massage", desc: "75 min — €55" },
+        { title: "Hot Stone Massage", desc: "90 min — €70" },
+        { title: "Couples Massage", desc: "60 min — €80" }
+      ],
+      rdvTitle: "Book an appointment",
+      form: { name: "Name", email: "Email", phone: "Phone", date: "Date", message: "Message", submit: "Reserve" },
+      galleryTitle: "Gallery",
+      contactTitle: "Contact",
+      contactEmail: "Email: massagezen2212@gmail.com",
+      contactWhatsapp: "WhatsApp: +33 7 56 91 33 16",
+      footer: "© 2026 Massage Zen - All rights reserved"
+    },
+    it: {
+      nav: { home: "Home", services: "Servizi", about: "Chi siamo", rdv: "Appuntamenti", contact: "Contatto" },
+      hero: "Concediti un momento di benessere autentico",
+      heroBtn: "Prenota un appuntamento",
+      aboutTitle: "Chi siamo - Massage Zen",
+      aboutText: "Da Massage Zen crediamo che il benessere sia un'esperienza autentica vissuta in un ambiente armonioso e rilassante.",
+      aboutBtn: "Scopri i nostri servizi",
+      prestationsTitle: "Le nostre Prestazioni & Tariffe",
+      services: [
+        { title: "Massaggio Rilassante", desc: "60 min — 40 €" },
+        { title: "Massaggio Terapeutico", desc: "75 min — 55 €" },
+        { title: "Massaggio Pietre Calde", desc: "90 min — 70 €" },
+        { title: "Massaggio Duo", desc: "60 min — 80 €" }
+      ],
+      rdvTitle: "Prenota un appuntamento",
+      form: { name: "Nome", email: "Email", phone: "Telefono", date: "Data", message: "Messaggio", submit: "Prenota" },
+      galleryTitle: "Galleria",
+      contactTitle: "Contatto",
+      contactEmail: "Email: massagezen2212@gmail.com",
+      contactWhatsapp: "WhatsApp: +33 7 56 91 33 16",
+      footer: "© 2026 Massage Zen - Tutti i diritti riservati"
+    }
+  };
+
+  // === WHATSAPP CONFIGURATION ===
+  // Numéro France (format international sans +) : +33 7 56 91 33 16 -> 33756913316
+  const whatsappNumber = "33756913316";
+
+  const waTemplates = {
+    fr: "Bonjour, je souhaite réserver un massage. Nom: {name} Email: {email} Téléphone: {phone} Date: {date} Message: {message}",
+    en: "Hello, I would like to book a massage. Name: {name} Email: {email} Phone: {phone} Date: {date} Message: {message}",
+    it: "Ciao, vorrei prenotare un massaggio. Nome: {name} Email: {email} Telefono: {phone} Data: {date} Messaggio: {message}"
+  };
+
+  const quickMsg = {
+    fr: "Bonjour, je souhaite prendre rendez-vous.",
+    en: "Hello, I would like to book an appointment.",
+    it: "Ciao, vorrei prenotare un appuntamento."
+  };
+
+  function buildWhatsAppUrl(lang, data = {}) {
+    const template = waTemplates[lang] || waTemplates.fr;
+    const filled = template
+      .replace("{name}", data.name || "-")
+      .replace("{email}", data.email || "-")
+      .replace("{phone}", data.phone || "-")
+      .replace("{date}", data.date || "-")
+      .replace("{message}", data.message || "-");
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(filled)}`;
+  }
+
+  function updateHeroWhatsApp(lang = 'fr') {
+    const heroBtn = document.getElementById('hero-btn');
+    const heroBtnText = document.getElementById('hero-btn-text');
+    if (!heroBtn || !heroBtnText) return;
+    const msg = quickMsg[lang] || quickMsg.fr;
+    heroBtn.setAttribute('href', `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`);
+    heroBtn.setAttribute('target', '_blank');
+    heroBtn.setAttribute('rel', 'noopener noreferrer');
+    heroBtnText.textContent = translations[lang].heroBtn || translations.fr.heroBtn;
+  }
+
+  function attachFormWhatsApp(lang = 'fr') {
+    const form = document.getElementById('rdv-form');
+    if (!form) return;
+
+    // Remove previous listener by cloning node (avoid duplicate handlers)
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+
+    newForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name')?.value || '',
+        email: document.getElementById('email')?.value || '',
+        phone: document.getElementById('phone')?.value || '',
+        date: document.getElementById('date')?.value || '',
+        message: document.getElementById('message')?.value || ''
+      };
+      const url = buildWhatsAppUrl(lang, data);
+      window.open(url, '_blank');
+      newForm.reset();
+    });
+  }
+
+  function enableWhatsAppForLanguage(lang) {
+    updateHeroWhatsApp(lang);
+    attachFormWhatsApp(lang);
+  }
+
+  // === LANGUAGE SWITCHER ===
+  function setLanguage(lang) {
+    const t = translations[lang] || translations.fr;
+
+    // Navbar
+    document.getElementById('nav-home').textContent = t.nav.home;
+    document.getElementById('nav-services').textContent = t.nav.services;
+    document.getElementById('nav-about').textContent = t.nav.about;
+    document.getElementById('nav-rdv').textContent = t.nav.rdv;
+    document.getElementById('nav-contact').textContent = t.nav.contact;
+
+    // Hero
+    document.getElementById('hero-text').textContent = t.hero;
+    document.getElementById('hero-btn-text').textContent = t.heroBtn;
+
+    // About
+    document.getElementById('about-title').textContent = t.aboutTitle;
+    document.getElementById('about-text').textContent = t.aboutText;
+    document.getElementById('about-btn').textContent = t.aboutBtn;
+
+    // Prestations
+    document.getElementById('prestations-title').textContent = t.prestationsTitle;
+    if (t.services && t.services.length) {
+      document.getElementById('service1-title').textContent = t.services[0].title;
+      document.getElementById('service1-desc').textContent = t.services[0].desc;
+      document.getElementById('service2-title').textContent = t.services[1].title;
+      document.getElementById('service2-desc').textContent = t.services[1].desc;
+      document.getElementById('service3-title').textContent = t.services[2].title;
+      document.getElementById('service3-desc').textContent = t.services[2].desc;
+      document.getElementById('service4-title').textContent = t.services[3].title;
+      document.getElementById('service4-desc').textContent = t.services[3].desc;
+    }
+
+    // Rendez-vous / form
+    document.getElementById('rdv-title').textContent = t.rdvTitle;
+    document.getElementById('label-name').textContent = t.form.name;
+    document.getElementById('label-email').textContent = t.form.email;
+    document.getElementById('label-phone').textContent = t.form.phone;
+    document.getElementById('label-date').textContent = t.form.date;
+    document.getElementById('label-message').textContent = t.form.message;
+    document.getElementById('btn-submit-text').textContent = t.form.submit;
+
+    
+
+    // Contact
+    document.getElementById('contact-title').textContent = t.contactTitle;
+    document.getElementById('contact-email').textContent = t.contactEmail;
+    document.getElementById('contact-whatsapp').textContent = t.contactWhatsapp;
+
+    // Footer
+    document.getElementById('footer-text').textContent = t.footer;
+
+    // Update WhatsApp links/behavior for selected language
+    enableWhatsAppForLanguage(lang);
+  }
+
+  // Initialize default language to French on load
+  document.addEventListener('DOMContentLoaded', function() {
+    setLanguage('fr');
+  });
+</script>
+
+</body>
+</html>
