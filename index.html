@@ -1,19 +1,92 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Massage Zen - Bien-Être Authentique</title>
+  <title>Massage Zen - Bien-Être Authentique à Lyon</title>
+  <meta name="description" content="Massage Zen à Lyon : massages relaxants, thérapeutiques, pierres chaudes et duo. Offrez-vous un moment de détente authentique. Réservation simple via WhatsApp." />
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
   <style>
-    body { font-family: 'Poppins', sans-serif; color: #333; }
-    h1, h2, h5 { font-family: 'Lora', serif; color: #12916f; }
-    .navbar { background-color: #12916f; }
-    a.nav-link { color: #fff; }
+    :root {
+      --primary: #12916f;
+      --primary-dark: #0e7359;
+      --primary-light: #6c9a8b;
+      --dark: #1a1a1a;
+      --gray: #555;
+      --light-bg: #f7f9f8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h5 {
+      font-family: 'Lora', serif;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      background-color: var(--primary);
+      padding: 0.9rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      font-size: 1.45rem;
+      color: white !important;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 400;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: white !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 60%;
+    }
+
+    /* ========== HERO ========== */
     .hero {
       background: url('hero.webp') center/cover no-repeat;
       height: 100vh;
+      min-height: 620px;
       color: white;
       display: flex;
       align-items: center;
@@ -21,18 +94,278 @@
       text-align: center;
       position: relative;
     }
+
     .hero::after {
       content: "";
       position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.4);
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
     }
-    .hero-content { position: relative; z-index: 1; }
-    .btn-success { background-color: #6c9a8b; border: none; }
-    .btn-success:hover { background-color: #5b8579; }
-    .card img { height: 220px; object-fit: cover; }
-    footer { background: #2c2c2c; color: #fff; }
-    .whatsapp-icon { margin-right:8px; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 0 24px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero .lead {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn-success {
+      background-color: var(--primary-light);
+      border: none;
+      padding: 0.85rem 1.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(108, 154, 139, 0.35);
+    }
+
+    .btn-success:hover {
+      background-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(18, 145, 111, 0.4);
+    }
+
+    .btn-success:active {
+      transform: translateY(0);
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 5.5rem 0;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      max-width: 620px;
+      margin: 1.5rem auto 3rem;
+      font-size: 1.05rem;
+    }
+
+    /* ========== ABOUT ========== */
+    #about img {
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    #about p {
+      color: var(--gray);
+      margin-bottom: 1.1rem;
+    }
+
+    /* ========== CARDS PRESTATIONS ========== */
+    .card {
+      border: none;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      height: 100%;
+      background: white;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12) !important;
+    }
+
+    .card img {
+      height: 210px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.06);
+    }
+
+    .card-body {
+      padding: 1.5rem 1.3rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-text {
+      color: var(--gray);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-top: 0.8rem;
+    }
+
+    /* ========== POURQUOI NOUS ========== */
+    .benefit-box {
+      padding: 2rem 1.5rem;
+      border-radius: 14px;
+      background: white;
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .benefit-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-color: transparent;
+    }
+
+    .benefit-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1.1rem;
+      display: inline-block;
+    }
+
+    .benefit-box h5 {
+      margin-bottom: 0.7rem;
+      font-size: 1.2rem;
+    }
+
+    .benefit-box p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* ========== TÉMOIGNAGES ========== */
+    .testimonial-card {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem 1.6rem;
+      height: 100%;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #444;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* ========== FORMULAIRE ========== */
+    .form-control {
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(18, 145, 111, 0.15);
+    }
+
+    .form-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-box {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      height: 100%;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+    }
+
+    .contact-box:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    }
+
+    .contact-box h5 {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-box a {
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-box a:hover {
+      color: var(--primary);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.85);
+      padding: 2.2rem 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    /* ========== UTILITIES ========== */
+    .bg-light-custom {
+      background-color: var(--light-bg);
+    }
+
+    .whatsapp-icon {
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
@@ -40,15 +373,16 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Massage Zen</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="#hero">Massage Zen</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" href="#prestations">Prestations</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#prestations">Prestations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pourquoi">Pourquoi nous</a></li>
         <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
         <li class="nav-item"><a class="nav-link" href="#rdv">Rendez-vous</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -60,70 +394,109 @@
 <!-- Hero -->
 <header id="hero" class="hero">
   <div class="hero-content">
-    <h1 class="display-5">Offrez-vous un moment de bien-être authentique</h1>
-    <a href="https://wa.me/33756913316?text=Bonjour,%20je%20souhaite%20prendre%20rendez-vous." class="btn btn-success btn-lg mt-3" target="_blank">
+    <h1>Offrez-vous un moment de bien-être authentique</h1>
+    <p class="lead">Massages personnalisés à Lyon dans une ambiance apaisante et professionnelle</p>
+    <a href="https://wa.me/33756913316?text=Bonjour,%20je%20souhaite%20prendre%20rendez-vous." class="btn btn-success btn-lg" target="_blank" rel="noopener">
       <span class="whatsapp-icon">📱</span> Prendre rendez-vous
     </a>
   </div>
 </header>
 
-<!-- About -->
-<section id="about" class="py-5">
+<!-- À propos -->
+<section id="about">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <img src="massage-relaxant.png" class="img-fluid rounded shadow-sm" alt="Ambiance massage zen">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="massage-relaxant.png" class="img-fluid" alt="Ambiance massage zen à Lyon" loading="lazy">
       </div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <h2 class="mb-4">À propos de Massage Zen</h2>
-        <p>
-          Chez <strong>Massage Zen</strong>, nous croyons que le bien-être est une expérience authentique qui se vit dans un cadre harmonieux et apaisant.
-        </p>
+        <p>Chez <strong>Massage Zen</strong>, nous croyons que le bien-être n’est pas un luxe, mais une nécessité. Dans un monde rythmé par le stress et les sollicitations constantes, nous vous offrons un espace de calme, de présence et de ressourcement.</p>
+        <p>Chaque séance est pensée comme une parenthèse unique. Nous prenons le temps d’écouter vos besoins (tensions, fatigue, stress, envie de pure détente) pour adapter le massage et vous offrir une expérience véritablement personnalisée.</p>
+        <p>Notre approche allie techniques professionnelles, huiles de qualité et une attention sincère à votre confort. L’objectif : vous permettre de repartir plus léger, plus détendu et recentré.</p>
         <a href="#prestations" class="btn btn-success mt-3">Découvrir nos prestations</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Prestations & Tarifs -->
-<section id="prestations" class="py-5 bg-light">
+<!-- Prestations -->
+<section id="prestations" class="bg-light-custom">
   <div class="container text-center">
-    <h2 class="mb-4">Nos Prestations & Tarifs</h2>
+    <h2 class="section-title">Nos Prestations & Tarifs</h2>
+    <p class="section-subtitle">Des massages soigneusement choisis pour répondre à vos besoins, du simple moment de détente au travail plus ciblé.</p>
+    
     <div class="row g-4">
-      <div class="col-md-3">
+      <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm">
-          <img src="massage-relaxant.png" class="card-img-top" alt="Massage relaxant">
-          <div class="card-body">
+          <img src="massage-relaxant.png" class="card-img-top" alt="Massage relaxant" loading="lazy">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Massage Relaxant</h5>
-            <p class="card-text">60 min — 40 €</p>
+            <p class="card-text flex-grow-1">Mouvements doux et enveloppants pour relâcher les tensions et favoriser un état de profonde détente.</p>
+            <div class="price">60 min — 40 €</div>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm">
-          <img src="massage-therapeutique.jpg" class="card-img-top" alt="Massage thérapeutique">
-          <div class="card-body">
+          <img src="massage-therapeutique.jpg" class="card-img-top" alt="Massage thérapeutique" loading="lazy">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Massage Thérapeutique</h5>
-            <p class="card-text">75 min — 55 €</p>
+            <p class="card-text flex-grow-1">Travail plus profond et ciblé pour soulager les tensions musculaires, le mal de dos et les contractures.</p>
+            <div class="price">75 min — 55 €</div>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm">
-          <img src="pierres-chaudes.jpg" class="card-img-top" alt="Massage pierres chaudes">
-          <div class="card-body">
-            <h5 class="card-title">Massage Pierres</h5>
-            <p class="card-text">90 min — 70 €</p>
+          <img src="pierres-chaudes.jpg" class="card-img-top" alt="Massage pierres chaudes" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Massage Pierres Chaudes</h5>
+            <p class="card-text flex-grow-1">Alliance de pierres basaltiques chauffées et de techniques manuelles pour une détente profonde.</p>
+            <div class="price">90 min — 70 €</div>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6 col-lg-3">
         <div class="card shadow-sm">
-          <img src="massage-duo.jpg" class="card-img-top" alt="Massage duo">
-          <div class="card-body">
+          <img src="massage-duo.jpg" class="card-img-top" alt="Massage duo" loading="lazy">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Massage Duo</h5>
-            <p class="card-text">60 min — 80 €</p>
+            <p class="card-text flex-grow-1">Partagez un moment de détente à deux. Idéal pour les couples ou les amis.</p>
+            <div class="price">60 min — 80 €</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pourquoi nous -->
+<section id="pourquoi">
+  <div class="container text-center">
+    <h2 class="section-title">Pourquoi choisir Massage Zen ?</h2>
+    <p class="section-subtitle">Ce qui fait la différence</p>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="benefit-box">
+          <div class="benefit-icon">🌿</div>
+          <h5>Approche personnalisée</h5>
+          <p>Chaque massage est adapté à votre état du moment et à vos attentes. Nous prenons le temps de vous écouter.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-box">
+          <div class="benefit-icon">✨</div>
+          <h5>Cadre apaisant</h5>
+          <p>Une ambiance calme, soignée et respectueuse pour que vous puissiez vraiment vous laisser aller.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-box">
+          <div class="benefit-icon">💬</div>
+          <h5>Réservation simple</h5>
+          <p>Prise de rendez-vous rapide et directe via WhatsApp. Pas de plateforme compliquée.</p>
         </div>
       </div>
     </div>
@@ -131,46 +504,38 @@
 </section>
 
 <!-- Témoignages -->
-<section id="temoignages" class="py-5">
+<section id="temoignages" class="bg-light-custom">
   <div class="container">
-    <h2 class="text-center mb-5">Ce que disent nos clients</h2>
+    <div class="text-center">
+      <h2 class="section-title">Ce que disent nos clients</h2>
+      <p class="section-subtitle">Quelques retours d’expérience</p>
+    </div>
+    
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Un moment de pure détente ! Le massage relaxant m'a fait un bien fou. Je recommande vivement."</p>
-            <div class="d-flex align-items-center mt-3">
-              <div>
-                <h6 class="mb-0">Sophie L.</h6>
-                <small class="text-muted">Lyon</small>
-              </div>
-            </div>
+        <div class="testimonial-card">
+          <p>"Un moment de pure détente ! Le massage relaxant m'a fait un bien fou. Je recommande vivement."</p>
+          <div class="mt-4">
+            <p class="testimonial-author">Sophie L.</p>
+            <small class="text-muted">Lyon</small>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Massage thérapeutique excellent pour mon dos. Professionnel et à l'écoute. Merci beaucoup !"</p>
-            <div class="d-flex align-items-center mt-3">
-              <div>
-                <h6 class="mb-0">Marc Dupont</h6>
-                <small class="text-muted">Lyon</small>
-              </div>
-            </div>
+        <div class="testimonial-card">
+          <p>"Massage thérapeutique excellent pour mon dos. Professionnel et à l'écoute. Merci beaucoup !"</p>
+          <div class="mt-4">
+            <p class="testimonial-author">Marc Dupont</p>
+            <small class="text-muted">Lyon</small>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <p class="card-text fst-italic">"Le massage duo avec mon conjoint était magique. Ambiance zen et tarifs raisonnables. On reviendra !"</p>
-            <div class="d-flex align-items-center mt-3">
-              <div>
-                <h6 class="mb-0">Julie & Thomas</h6>
-                <small class="text-muted">Lyon</small>
-              </div>
-            </div>
+        <div class="testimonial-card">
+          <p>"Le massage duo avec mon conjoint était magique. Ambiance zen et tarifs raisonnables. On reviendra !"</p>
+          <div class="mt-4">
+            <p class="testimonial-author">Julie & Thomas</p>
+            <small class="text-muted">Lyon</small>
           </div>
         </div>
       </div>
@@ -178,11 +543,15 @@
   </div>
 </section>
 
-<!-- Formulaire Rendez-vous -->
-<section id="rdv" class="py-5 bg-light">
+<!-- Formulaire -->
+<section id="rdv">
   <div class="container">
-    <h2 class="text-center mb-4">Prendre rendez-vous</h2>
-    <form class="row g-3" id="rdv-form">
+    <div class="text-center">
+      <h2 class="section-title">Prendre rendez-vous</h2>
+      <p class="section-subtitle">Remplissez le formulaire, vous serez redirigé vers WhatsApp avec votre demande déjà rédigée.</p>
+    </div>
+    
+    <form class="row g-3 col-lg-8 mx-auto" id="rdv-form">
       <div class="col-md-6">
         <label class="form-label" for="name">Nom</label>
         <input type="text" id="name" class="form-control" required />
@@ -196,15 +565,15 @@
         <input type="tel" id="phone" class="form-control" required />
       </div>
       <div class="col-md-6">
-        <label class="form-label" for="date">Date</label>
+        <label class="form-label" for="date">Date souhaitée</label>
         <input type="date" id="date" class="form-control" required />
       </div>
       <div class="col-12">
         <label class="form-label" for="message">Message</label>
-        <textarea id="message" class="form-control" rows="3" placeholder="Précisez le type de massage souhaité..."></textarea>
+        <textarea id="message" class="form-control" rows="3" placeholder="Précisez le type de massage souhaité, zones à travailler..."></textarea>
       </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-success px-4">
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-success px-5">
           <span class="whatsapp-icon">📱</span> Réserver via WhatsApp
         </button>
       </div>
@@ -213,23 +582,53 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">Contact</h2>
-    <p>Email : massagezen2212@gmail.com</p>
-    <p>Whatsapp : 07 56 91 33 16</p>
+<section id="contact" class="bg-light-custom">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Contact & Horaires</h2>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="contact-box text-center">
+          <h5>Nous contacter</h5>
+          <p class="mb-2">📧 <a href="mailto:massagezen2212@gmail.com">massagezen2212@gmail.com</a></p>
+          <p class="mb-3">📱 <a href="https://wa.me/33756913316" target="_blank" rel="noopener">07 56 91 33 16</a></p>
+          <a href="https://wa.me/33756913316?text=Bonjour,%20je%20souhaite%20prendre%20rendez-vous." class="btn btn-success btn-sm" target="_blank" rel="noopener">
+            Écrire sur WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-box text-center">
+          <h5>Horaires</h5>
+          <p class="mb-1">Lundi – Vendredi : 9h – 20h</p>
+          <p class="mb-1">Samedi : 9h – 18h</p>
+          <p class="mb-0 text-muted small">Dimanche : sur rendez-vous</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-box text-center">
+          <h5>Lieu</h5>
+          <p class="mb-1">Lyon et environs</p>
+          <p class="text-muted small mb-0">Adresse communiquée lors de la confirmation du rendez-vous</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="text-center py-3">
-  <p>&copy; 2026 Massage Zen - Tous droits réservés</p>
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-1">© 2026 Massage Zen – Tous droits réservés</p>
+    <p class="small" style="opacity: 0.7;">Bien-être authentique à Lyon</p>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  // WhatsApp sur le formulaire
   document.getElementById('rdv-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('name').value;
@@ -243,4 +642,4 @@
 </script>
 
 </body>
-      </html>
+</html>
